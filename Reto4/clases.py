@@ -64,6 +64,13 @@ class Usuario:
     def verCuenta(self):
         print('Nombre: {} \t\tTipo Usuario: {}'.format(self.nombre, usuarios[self.nombre][1]))
 
+    def convertirNumero(self, num):
+        try:
+            num = int(num)
+        except:
+            num = "error"
+        return num
+
     def listaFacturas(self):
         print("Lista de Facturas: ")
         for factura in db:
@@ -106,9 +113,21 @@ class Facturacion(Usuario):
         print("*Agregar Un Producto*")
         codigo = input("Codigo del Producto: ")
         descripcion = input("Descripcion del Producto: ")
-        precio = int(input("Costo de cada unidad: "))
-        unidades = int(input("Cantidad de unidades: "))
-        iv = int(input("Iva del producto: "))
+        while True:
+            precio = input("Costo de cada unidad: ")
+            precio = self.convertirNumero(precio)
+            if precio!="error":
+                break
+        while True:
+            unidades = input("Cantidad de unidades: ")
+            unidades = self.convertirNumero(unidades)
+            if unidades!="error":
+                break
+        while True:
+            iv = input("Iva del producto: ")
+            iv = self.convertirNumero(iv)
+            if iv!="error":
+                break
         db[num][codigo] = [descripcion,precio,unidades,iv]
         print("\n\n\n*Dato Agregado*")
 
@@ -169,9 +188,21 @@ class Administracion(Usuario):
                         break
                 if encontrado:
                     descripcion = input("Descripcion del Producto: ")
-                    precio = int(input("Costo de cada unidad: "))
-                    unidades = int(input("Cantidad de unidades: "))
-                    iv = int(input("Iva del producto: "))
+                    while True:
+                        precio = input("Costo de cada unidad: ")
+                        precio = self.convertirNumero(precio)
+                        if precio!="error":
+                            break
+                    while True:
+                        unidades = input("Cantidad de unidades: ")
+                        unidades = self.convertirNumero(unidades)
+                        if unidades!="error":
+                            break
+                    while True:
+                        iv = input("Iva del producto: ")
+                        iv = self.convertirNumero(iv)
+                        if iv!="error":
+                            break
                     db[res][res1] = [descripcion,precio,unidades,iv]
                     print(RED+"Producto Agregado"+RESET)
 
@@ -187,9 +218,21 @@ class Administracion(Usuario):
                 for i in db[factura]:
                     if i == res1:
                         descripcion = input("Nueva Descripcion del Producto: ")
-                        precio = int(input("Nuevo Costo de cada unidad: "))
-                        unidades = int(input("Nueva Cantidad de unidades: "))
-                        iv = int(input("Nuevo Iva del producto: "))
+                        while True:
+                            precio = input("Costo de cada unidad: ")
+                            precio = self.convertirNumero(precio)
+                            if precio!="error":
+                                break
+                        while True:
+                            unidades = input("Cantidad de unidades: ")
+                            unidades = self.convertirNumero(unidades)
+                            if unidades!="error":
+                                break
+                        while True:
+                            iv = input("Iva del producto: ")
+                            iv = self.convertirNumero(iv)
+                            if iv!="error":
+                                break
                         db[res][res1] = [descripcion,precio,unidades,iv]
                         print(RED+"Producto Modificado"+RESET)
 
