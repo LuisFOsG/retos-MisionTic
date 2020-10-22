@@ -125,10 +125,6 @@ class Facturacion(Usuario):
         print("Venta Total:",saldoDia)
 
 # ==========================================================Clase Administracion====================================================
-""" Derechos del Administrador:
-    adicionar, modificar
-"""
-
 class Administracion(Usuario):
     def eliminarFactura(self):
         self.listaFacturas()
@@ -139,3 +135,72 @@ class Administracion(Usuario):
                 del db[factura]
                 print("Factura Eliminada")
                 break
+
+    def editarFactura(self):
+        print("Que desea Realizar?")
+        print(" 1: Agregar un producto")
+        print(" 2: Modificar un producto")
+        print(" 3: Eliminar un producto")
+        res = input("=> ")
+        if res == "1":
+            self.agregarProducto()
+        if res == "2":
+            self.modificarProducto()
+        if res == "3":
+            self.eliminarProductos()
+
+    def agregarProducto(self):
+        encontrado = True
+        self.listaFacturas()
+        print("Ingrese el codigo de la Factura")
+        res = input("=> ")
+        for factura in db:
+            if factura == res:
+                self.imprimirFactura(res)
+                print("Ingrese el codigo del producto a Agregar")
+                res1 = input("=> ")
+                for i in db[factura]:
+                    if i == res1:
+                        encontrado = False
+                        break
+                if encontrado:
+                    descripcion = input("Descripcion del Producto: ")
+                    precio = int(input("Costo de cada unidad: "))
+                    unidades = int(input("Cantidad de unidades: "))
+                    iv = int(input("Iva del producto: "))
+                    db[res][res1] = [descripcion,precio,unidades,iv]
+                    print("Producto Agregado")
+
+    def modificarProducto(self):
+        self.listaFacturas()
+        print("Ingrese el codigo de la Factura")
+        res = input("=> ")
+        for factura in db:
+            if factura == res:
+                self.imprimirFactura(res)
+                print("Ingrese el codigo a Modificar")
+                res1 = input("=> ")
+                for i in db[factura]:
+                    if i == res1:
+                        descripcion = input("Nueva Descripcion del Producto: ")
+                        precio = int(input("Nuevo Costo de cada unidad: "))
+                        unidades = int(input("Nueva Cantidad de unidades: "))
+                        iv = int(input("Nuevo Iva del producto: "))
+                        db[res][res1] = [descripcion,precio,unidades,iv]
+                        print("Producto Modificado")
+
+    def eliminarProductos(self):
+        self.listaFacturas()
+        print("Ingrese el codigo de la Factura")
+        res = input("=> ")
+        for factura in db:
+            if factura == res:
+                self.imprimirFactura(res)
+                print("Ingrese el codigo a Eliminar")
+                res1 = input("=> ")
+                for i in db[factura]:
+                    if i == res1:
+                        print(db[res][res1])
+                        del db[res][res1]
+                        print("Producto Eliminado")
+                        break

@@ -34,7 +34,7 @@ def administracion():
         administracion()
 
     elif res == "3":
-        print("3")
+        usuario.editarFactura()
         input("\n\nDar Enter para continuar: ")
         administracion()
 
