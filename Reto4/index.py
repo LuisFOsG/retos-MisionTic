@@ -1,4 +1,4 @@
-from clases import usuarios, Administracion, Facturacion, numFactura
+from clases import usuarios, Administracion, Facturacion, numFactura, RED, RESET
 
 #variables globales
 encontrado = False
@@ -6,9 +6,6 @@ nombre = ""
 contra = ""
 tipo = ""
 usuario = ""
-
-RED = '\033[31m'
-RESET = '\033[39m'
 
 """ ===========================================Menu de Opciones============================================= """
 
@@ -44,7 +41,7 @@ def administracion():
         administracion()
 
     elif res == "5":
-        print("Hasta la Proxima!!")
+        print(RED+"Hasta la Proxima!!"+RESET)
         exit()
         administracion()
 
@@ -134,7 +131,7 @@ def login():
             print("\n\n\n")
             login()
     else:
-        print("Este Usuario No Existe, Desea Registrarse?")
+        print(RED+"Este Usuario No Existe,"+RESET+" Desea Registrarse?")
         res = input("s/n : ")
         if res=="s":
             while res!="null":

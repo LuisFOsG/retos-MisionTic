@@ -1,5 +1,8 @@
 from basedatos import baseDatos as db
 
+""" Variables Globales """
+RED = '\033[31m'
+RESET = '\033[39m'
 numFactura = len(db)
 crearFactura = False
 saldoDia = 0
@@ -26,7 +29,7 @@ class Usuario:
         for factura in db:
             if factura == res:
                 lista = list(db[factura].items())
-                print("\n\n=============================SUPERMERCADO SUPER BARATON=================================")
+                print("\n\n============================="+RED+"SUPERMERCADO SUPER BARATON"+RESET+"=================================")
                 print("\nCliente:", lista[0][1], "\t\tNumero de Factura:", factura)
                 print("Cedula:", lista[0][0])
                 print('{:^10}{:^30}{:^10}{:^10}{:^15}{:^15}'.format("Codigo","Descripcion","Cantidad","Iva","Valor Unitario", "Valor Total"))
@@ -50,6 +53,7 @@ class Usuario:
                 total += subtotal
                 variableSaldo = total
                 print("\t\t\t\t\t\t\t\t\tTotal:",total)
+                print("========================================================================================")
 
     def verFactura(self):
         self.listaFacturas()
@@ -86,7 +90,7 @@ class Facturacion(Usuario):
         crearFactura = True
         while True:
             self.imprimirFactura(num)
-            print("Recuerde que una vez Finalizada la inserción de los datos, solo el Administrador podra adicionar productos")
+            print(RED+"Recuerde que una vez Finalizada la inserción de los datos, solo el Administrador podra adicionar productos"+RESET)
             print("Desea Agregar un producto?")
             res = input("s/n: ")
             print("\n\n\n")
@@ -95,7 +99,7 @@ class Facturacion(Usuario):
             else:
                 self.imprimirFactura(num)
                 saldoDia += variableSaldo
-                print("**Factura Creada**")
+                print(RED+"**Factura Creada**"+RESET)
                 break
 
     def agregarProducto(self, num):
@@ -110,7 +114,7 @@ class Facturacion(Usuario):
 
     def cerrarSeccion(self):
         global numFactura, crearFactura, saldoDia
-        print("\n\n\n\n\n**Cerrando Seccion**\n\n")
+        print(RED+"\n\n\n\n\n**Cerrando Seccion**\n\n"+RESET)
         if crearFactura:
             if numFactura<10:
                 num = "00"+str(numFactura)
@@ -133,7 +137,7 @@ class Administracion(Usuario):
         for factura in db:
             if factura == res:
                 del db[factura]
-                print("Factura Eliminada")
+                print(RED+"Factura Eliminada"+RESET)
                 break
 
     def editarFactura(self):
@@ -169,7 +173,7 @@ class Administracion(Usuario):
                     unidades = int(input("Cantidad de unidades: "))
                     iv = int(input("Iva del producto: "))
                     db[res][res1] = [descripcion,precio,unidades,iv]
-                    print("Producto Agregado")
+                    print(RED+"Producto Agregado"+RESET)
 
     def modificarProducto(self):
         self.listaFacturas()
@@ -187,7 +191,7 @@ class Administracion(Usuario):
                         unidades = int(input("Nueva Cantidad de unidades: "))
                         iv = int(input("Nuevo Iva del producto: "))
                         db[res][res1] = [descripcion,precio,unidades,iv]
-                        print("Producto Modificado")
+                        print(RED+"Producto Modificado"+RESET)
 
     def eliminarProductos(self):
         self.listaFacturas()
@@ -202,5 +206,5 @@ class Administracion(Usuario):
                     if i == res1:
                         print(db[res][res1])
                         del db[res][res1]
-                        print("Producto Eliminado")
+                        print(RED+"Producto Eliminado"+RESET)
                         break
