@@ -69,6 +69,7 @@ class Usuario:
             num = int(num)
         except:
             num = "error"
+            print(RED+"El dato ingresado no corresponde a un numero"+RESET)
         return num
 
     def listaFacturas(self):
@@ -110,7 +111,7 @@ class Facturacion(Usuario):
                 break
 
     def agregarProducto(self, num):
-        print("*Agregar Un Producto*")
+        print(RED+"*Agregar Un Producto*"+RESET)
         codigo = input("Codigo del Producto: ")
         descripcion = input("Descripcion del Producto: ")
         while True:
