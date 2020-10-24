@@ -97,7 +97,7 @@ def verificacion(nombre):
     global encontrado
     encontrado = False
     for serch in usuarios:
-        if serch==nombre:
+        if serch == nombre:
             encontrado = True
             break
     if encontrado:
@@ -107,7 +107,7 @@ def verificacion(nombre):
 
 def login():
     global encontrado, nombre, contra, tipo
-    if encontrado==False:
+    if encontrado == False:
         print("Supermercado Super Baratón\n\n")
         print("Bienvenido.")
 
@@ -119,7 +119,7 @@ def login():
         nombre = nombre.capitalize()
 
     if verificacion(nombre):
-        if usuarios[nombre][0]==contra:
+        if usuarios[nombre][0] == contra:
             if usuarios[nombre][1]=="administrativo":
                 tipo = "administrativo"
             elif usuarios[nombre][1]=="facturacion":

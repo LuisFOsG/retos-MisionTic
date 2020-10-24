@@ -32,7 +32,9 @@ class Usuario:
                 print("\n\n============================="+RED+"SUPERMERCADO SUPER BARATON"+RESET+"=================================")
                 print("\nCliente:", lista[0][1], "\t\tNumero de Factura:", factura)
                 print("Cedula:", lista[0][0])
+                print("----------------------------------------------------------------------------------------")
                 print('{:^10}{:^30}{:^10}{:^10}{:^15}{:^15}'.format("Codigo","Descripcion","Cantidad","Iva","Valor Unitario", "Valor Total"))
+                print("----------------------------------------------------------------------------------------")
                 subtotal = 0
                 total = 0
                 iva = []
@@ -46,6 +48,7 @@ class Usuario:
                             iva.append(listaBorrador)
                         subtotal += num[1][2]*num[1][1]
                         print('{:^10}{:^30}{:^10}{:^10}{:^15}{:^15}'.format(num[0],num[1][0],num[1][2],num[1][3],num[1][1], num[1][2]*num[1][1]))
+                print("________________________________________________________________________________________")
                 print("\t\t\t\t\t\t\t\t\tSubtotal:",subtotal)
                 for i in iva:
                     print("\t\t\t\t\t\t\t\t\tIva "+str(i[0])+"%:", i[1])
