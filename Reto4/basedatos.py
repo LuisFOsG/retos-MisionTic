@@ -1,23 +1,23 @@
 baseDatos = {
     "001": {
-        "1079": "Ignacio Rueda",
+        "1079": "Carlos Rueda",
         "1003": [
-            "Descripcion del Producto",
-            500,
-            3,
-            19,
+            "Coca Cola",
+            2700,
+            5,
+            10,
         ],
         "1083": [
-            "Descripcion del Producto 2",
-            11000,
-            8,
-            16,
+            "Cheetos",
+            1800,
+            10,
+            5,
         ],
         "1259": [
-            "Descripcion del Producto 3",
-            5000,
+            "Tortillas",
+            3000,
             9,
-            0,
+            19,
         ],
     },
     "002": {

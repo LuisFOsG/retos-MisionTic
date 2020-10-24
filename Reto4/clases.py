@@ -10,11 +10,11 @@ variableSaldo = 0
 
 usuarios = {
     "Luis": [
-        "admin", #Contraseña
+        "administrar", #Contraseña
         "administrativo",
     ],
     "Fernando": [
-        "usuario", #Contraseña
+        "facturar", #Contraseña
         "facturacion",
     ]
 }
