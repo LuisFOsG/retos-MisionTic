@@ -70,7 +70,7 @@
                 {
                     "Cedula": "1005331",
                     "Nombre": "Lilian",
-                    "Edad": 25,
+                    "Edad": 62,
                     "NivelEscolar": "postgrado",
                     "Trabajo": false,
                     "Ingresos": 2000000,
@@ -79,7 +79,7 @@
                 {
                     "Cedula": "1005332",
                     "Nombre": "Tafur",
-                    "Edad": 26,
+                    "Edad": 61,
                     "NivelEscolar": "pregrado",
                     "Trabajo": true,
                     "Ingresos": 1000000,

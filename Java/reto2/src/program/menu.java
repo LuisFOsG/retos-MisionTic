@@ -7,16 +7,53 @@ import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
 /**
  *
  * @author ColdHeart
  */
-public class menu {
 
+public class menu {
+    static String nombreDep = "";
+    static int noTrabaja = 0;
+    static int numPerson = 0;
+    static long ingresosMayores = 0;
+    static int numPersonMayores = 0;
+    static int nivelPostgrado = 0;
+    
+    List<Municipio> municipio = new ArrayList<>();
+    List<Barrio> barr = new ArrayList<>();
+    List<Vereda> verr = new ArrayList<>();
+    
+    /*
+        Resultado de Las Operaciones
+    */
+    static float porNoTrabajo = 0f;
+    static float porPostgrado = 0f;
+    static float promIngreso = 0f;
+    
     @SuppressWarnings("empty-statement")
     public static void main(String args[]){
         JSONObject data = leerTxt("departamento.json");
         encapsularDatos(data);
+        impresionDatos();
+    }
+
+    public static void impresionDatos(){
+        porNoTrabajo = 100* (float) noTrabaja/numPerson;
+        porPostgrado = 100* (float) nivelPostgrado/numPerson;
+        promIngreso = (float) ingresosMayores/numPersonMayores;
+
+        System.out.println("Resultados del Departamento "+nombreDep);
+        System.out.println("No Trabajan: "+noTrabaja);
+        System.out.println("Numero de personas: "+numPerson);
+        System.out.println("Numero de personas Mayores a 60 Años: "+numPersonMayores);
+        System.out.println("Ingresos de las Personas Mayores: "+ingresosMayores);
+        System.out.println("Numero de personas con Nivel Postgrado: "+nivelPostgrado);
+        System.out.println("=================PORCENTAJES Y PROMEDIOS========================");
+        System.out.println("Porcentaje de Desempleo: "+porNoTrabajo+"%");
+        System.out.println("Porcentaje de Personas con Postgrado: "+porPostgrado+"%");
+        System.out.println("Promedio del ingreso de las Personas Mayores a 60 Años: "+promIngreso);
     }
 
     public static JSONObject leerTxt(String direccion){
@@ -33,19 +70,16 @@ public class menu {
 
     public static void encapsularDatos(JSONObject config){
 
-        String nombreDep = (String) config.get("Nombre");
+        nombreDep = (String) config.get("Nombre");
         JSONArray departamento = (JSONArray) config.get("Municipios");
         
         Iterator<JSONObject> iterador_depart = departamento.iterator();
-        List<Municipio> municipio = new ArrayList<>();
-        
-        while(iterador_depart.hasNext()){
-            List<Barrio> barr = new ArrayList<>();
-            List<Vereda> verr = new ArrayList<>();
 
+        while(iterador_depart.hasNext()){
             JSONObject arrMunicipio = iterador_depart.next();
             String nom_mun = (String) arrMunicipio.get("Nombre");
             
+            System.out.println("");
             System.out.println(nom_mun);
             System.out.println(nombreDep);
             System.out.println("=============================");
@@ -60,15 +94,28 @@ public class menu {
                 long edad = (long) arrBarrios.get("Edad");
                 long ingreso = (long) arrBarrios.get("Ingresos");
                 long salidasNocturnas = (long) arrBarrios.get("Salidas Nocturnas");
+                boolean trabaja = (boolean) arrBarrios.get("Trabajo");
+                numPerson++;
+                if(trabaja==false){
+                    noTrabaja++;
+                }
+                if(edad>60){
+                    ingresosMayores+=ingreso;
+                    numPersonMayores+=1;
+                }
+                if(nivelEscolar.equals("postgrado")){
+                    nivelPostgrado+=1;
+                }
                 System.out.println(nombreHabitante);
                 System.out.println(nivelEscolar);
                 System.out.println(cedula);
                 System.out.println(edad);
                 System.out.println(ingreso);
                 System.out.println(salidasNocturnas);
+                System.out.println(trabaja);
                 System.out.println("=============================");
             }
-            
+
             JSONArray veredas = (JSONArray) arrMunicipio.get("Veredas");
             Iterator<JSONObject> iterador_veredas = veredas.iterator();
             while(iterador_veredas.hasNext()){
@@ -79,12 +126,25 @@ public class menu {
                 long edad = (long) arrVeredas.get("Edad");
                 long ingreso = (long) arrVeredas.get("Ingresos");
                 String cultivo = (String) arrVeredas.get("Cultivos");
+                boolean trabaja = (boolean) arrVeredas.get("Trabajo");
+                numPerson++;
+                if(trabaja==false){
+                    noTrabaja++;
+                }
+                if(edad>60){
+                    ingresosMayores+=ingreso;
+                    numPersonMayores+=1;
+                }
+                if(nivelEscolar.equals("postgrado")){
+                    nivelPostgrado+=1;
+                }
                 System.out.println(nombreHabitante);
                 System.out.println(nivelEscolar);
                 System.out.println(cedula);
                 System.out.println(edad);
                 System.out.println(ingreso);
                 System.out.println(cultivo);
+                System.out.println(trabaja);
                 System.out.println("=============================");
             }
         }
