@@ -5,8 +5,6 @@
  */
 package program;
 
-import java.util.List;
-
 /**
  *
  * @author ColdHeart
@@ -14,8 +12,8 @@ import java.util.List;
 public class Vereda extends Persona{
     String Cultivo;
 
-    public Vereda(String Cultivo, String cedula, String nombrePersona, long edad, String NivelEscolar, boolean trabaja, long ingreso, List<Barrio> barrio, List<Vereda> vereda) {
-        super(cedula, nombrePersona, edad, NivelEscolar, trabaja, ingreso, barrio, vereda);
+    public Vereda(String Cultivo, String cedula, String nombrePersona, long edad, String NivelEscolar, boolean trabaja, long ingreso) {
+        super(cedula, nombrePersona, edad, NivelEscolar, trabaja, ingreso);
         this.Cultivo = Cultivo;
     }
 
@@ -26,5 +24,4 @@ public class Vereda extends Persona{
     public void setCultivo(String Cultivo) {
         this.Cultivo = Cultivo;
     }
-    
 }

@@ -20,11 +20,7 @@ public class menu {
     static long ingresosMayores = 0;
     static int numPersonMayores = 0;
     static int nivelPostgrado = 0;
-    
-    List<Municipio> municipio = new ArrayList<>();
-    List<Barrio> barr = new ArrayList<>();
-    List<Vereda> verr = new ArrayList<>();
-    
+
     /*
         Resultado de Las Operaciones
     */
@@ -43,10 +39,8 @@ public class menu {
         porNoTrabajo = 100* (float) noTrabaja/numPerson;
         porPostgrado = 100* (float) nivelPostgrado/numPerson;
         promIngreso = (float) ingresosMayores/numPersonMayores;
-
-        System.out.println("Resultados del Departamento "+nombreDep);
+        System.out.println("Numero de Personas Totales: "+numPerson);
         System.out.println("No Trabajan: "+noTrabaja);
-        System.out.println("Numero de personas: "+numPerson);
         System.out.println("Numero de personas Mayores a 60 Años: "+numPersonMayores);
         System.out.println("Ingresos de las Personas Mayores: "+ingresosMayores);
         System.out.println("Numero de personas con Nivel Postgrado: "+nivelPostgrado);
@@ -69,6 +63,8 @@ public class menu {
     }
 
     public static void encapsularDatos(JSONObject config){
+        List<Barrio> barr = new ArrayList<>();
+        List<Vereda> verr = new ArrayList<>();
 
         nombreDep = (String) config.get("Nombre");
         JSONArray departamento = (JSONArray) config.get("Municipios");
@@ -106,6 +102,8 @@ public class menu {
                 if(nivelEscolar.equals("postgrado")){
                     nivelPostgrado+=1;
                 }
+                Barrio personBarrio = new Barrio(salidasNocturnas,cedula,nombreHabitante,edad,nivelEscolar,trabaja,ingreso);
+                barr.add(personBarrio);
                 System.out.println(nombreHabitante);
                 System.out.println(nivelEscolar);
                 System.out.println(cedula);
@@ -138,6 +136,8 @@ public class menu {
                 if(nivelEscolar.equals("postgrado")){
                     nivelPostgrado+=1;
                 }
+                Vereda personVereda = new Vereda(cultivo,cedula,nombreHabitante,edad,nivelEscolar,trabaja,ingreso);
+                verr.add(personVereda);
                 System.out.println(nombreHabitante);
                 System.out.println(nivelEscolar);
                 System.out.println(cedula);
@@ -147,6 +147,10 @@ public class menu {
                 System.out.println(trabaja);
                 System.out.println("=============================");
             }
+            System.out.println("\n\n\n\n");
+            System.out.println("==========================Resultados del Departamento "+nombreDep+"===========================");
+            System.out.println("Total Personas de Veredas: "+verr.size());
+            System.out.println("Total Personas de Barrios: "+barr.size());
         }
     }
 }

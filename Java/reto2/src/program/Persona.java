@@ -5,8 +5,6 @@
  */
 package program;
 
-import java.util.List;
-
 /**
  *
  * @author ColdHeart
@@ -18,18 +16,14 @@ public class Persona {
     String NivelEscolar;
     boolean trabaja;
     long ingreso;
-    List<Barrio> barrio;
-    List<Vereda> vereda;
 
-    public Persona(String cedula, String nombrePersona, long edad, String NivelEscolar, boolean trabaja, long ingreso, List<Barrio> barrio, List<Vereda> vereda) {
+    public Persona(String cedula, String nombrePersona, long edad, String NivelEscolar, boolean trabaja, long ingreso) {
         this.cedula = cedula;
         this.nombrePersona = nombrePersona;
         this.edad = edad;
         this.NivelEscolar = NivelEscolar;
         this.trabaja = trabaja;
         this.ingreso = ingreso;
-        this.barrio = barrio;
-        this.vereda = vereda;
     }
 
     public String getCedula() {
@@ -78,22 +72,6 @@ public class Persona {
 
     public void setIngreso(long ingreso) {
         this.ingreso = ingreso;
-    }
-
-    public List<Barrio> getBarrio() {
-        return barrio;
-    }
-
-    public void setBarrio(List<Barrio> barrio) {
-        this.barrio = barrio;
-    }
-
-    public List<Vereda> getVereda() {
-        return vereda;
-    }
-
-    public void setVereda(List<Vereda> vereda) {
-        this.vereda = vereda;
     }
     
 }

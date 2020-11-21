@@ -14,8 +14,8 @@ import java.util.List;
 public class Barrio extends Persona{
     long salidasNocturnas;
 
-    public Barrio(long salidasNocturnas, String cedula, String nombrePersona, long edad, String NivelEscolar, boolean trabaja, long ingreso, List<Barrio> barrio, List<Vereda> vereda) {
-        super(cedula, nombrePersona, edad, NivelEscolar, trabaja, ingreso, barrio, vereda);
+    public Barrio(long salidasNocturnas, String cedula, String nombrePersona, long edad, String NivelEscolar, boolean trabaja, long ingreso) {
+        super(cedula, nombrePersona, edad, NivelEscolar, trabaja, ingreso);
         this.salidasNocturnas = salidasNocturnas;
     }
 
@@ -26,5 +26,4 @@ public class Barrio extends Persona{
     public void setSalidasNocturnas(long salidasNocturnas) {
         this.salidasNocturnas = salidasNocturnas;
     }
-    
 }
