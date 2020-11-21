@@ -5,11 +5,26 @@
  */
 package program;
 
+import java.util.List;
+
 /**
  *
  * @author ColdHeart
  */
-public class Barrio {
-    static int conBarrio=0;
+public class Barrio extends Persona{
+    long salidasNocturnas;
+
+    public Barrio(long salidasNocturnas, long cedula, String nombrePersona, int edad, String NivelEscolar, boolean trabaja, long ingreso, List<Barrio> barrio, List<Vereda> vereda) {
+        super(cedula, nombrePersona, edad, NivelEscolar, trabaja, ingreso, barrio, vereda);
+        this.salidasNocturnas = salidasNocturnas;
+    }
+
+    public long getSalidasNocturnas() {
+        return salidasNocturnas;
+    }
+
+    public void setSalidasNocturnas(long salidasNocturnas) {
+        this.salidasNocturnas = salidasNocturnas;
+    }
     
 }

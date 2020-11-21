@@ -5,10 +5,26 @@
  */
 package program;
 
+import java.util.List;
+
 /**
  *
  * @author ColdHeart
  */
-public class Vereda {
-    static int conVereda=0;
+public class Vereda extends Persona{
+    String Cultivo;
+
+    public Vereda(String Cultivo, long cedula, String nombrePersona, int edad, String NivelEscolar, boolean trabaja, long ingreso, List<Barrio> barrio, List<Vereda> vereda) {
+        super(cedula, nombrePersona, edad, NivelEscolar, trabaja, ingreso, barrio, vereda);
+        this.Cultivo = Cultivo;
+    }
+
+    public String getCultivo() {
+        return Cultivo;
+    }
+
+    public void setCultivo(String Cultivo) {
+        this.Cultivo = Cultivo;
+    }
+    
 }

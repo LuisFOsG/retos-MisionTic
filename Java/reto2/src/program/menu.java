@@ -56,8 +56,6 @@ public class menu {
             JSONArray veredas = (JSONArray) arrMunicipio.get("Veredas");
             Iterator<JSONObject> iterador_veredas = veredas.iterator();
             while(iterador_veredas.hasNext()){
-                Cultivos[] cult = new Cultivos[10];
-
                 JSONObject arrVeredas = iterador_veredas.next();
                 String nombreHabitante = (String) arrVeredas.get("Nombre");
                 JSONArray cultivos = (JSONArray) arrVeredas.get("Cultivos");
