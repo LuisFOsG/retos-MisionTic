@@ -14,7 +14,7 @@ import java.util.List;
 public class Vereda extends Persona{
     String Cultivo;
 
-    public Vereda(String Cultivo, long cedula, String nombrePersona, int edad, String NivelEscolar, boolean trabaja, long ingreso, List<Barrio> barrio, List<Vereda> vereda) {
+    public Vereda(String Cultivo, String cedula, String nombrePersona, long edad, String NivelEscolar, boolean trabaja, long ingreso, List<Barrio> barrio, List<Vereda> vereda) {
         super(cedula, nombrePersona, edad, NivelEscolar, trabaja, ingreso, barrio, vereda);
         this.Cultivo = Cultivo;
     }

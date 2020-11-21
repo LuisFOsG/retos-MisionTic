@@ -8,7 +8,7 @@
                     "Cedula": "1005325",
                     "Nombre": "Luis",
                     "Edad": 19,
-                    "Nivel Escolar": "postgrado",
+                    "NivelEscolar": "postgrado",
                     "Trabajo": false,
                     "Ingresos": 8000000,
                     "Salidas Nocturnas": 5
@@ -17,7 +17,7 @@
                     "Cedula": "1005326",
                     "Nombre": "Bryan",
                     "Edad": 20,
-                    "Nivel Escolar": "pregrado",
+                    "NivelEscolar": "pregrado",
                     "Trabajo": true,
                     "Ingresos": 7000000,
                     "Salidas Nocturnas": 6
@@ -28,33 +28,19 @@
                     "Cedula": "1005327",
                     "Nombre": "Jhan",
                     "Edad": 21,
-                    "Nivel Escolar": "postgrado",
+                    "NivelEscolar": "postgrado",
                     "Trabajo": false,
                     "Ingresos": 6000000,
-                    "Cultivos": [
-                        {
-                            "Nombre": "Papa"
-                        },
-                        {
-                            "Nombre": "Yuca"
-                        }
-                    ]
+                    "Cultivos": "Papa"
                 },
                 {
                     "Cedula": "1005328",
                     "Nombre": "Breinner",
                     "Edad": 22,
-                    "Nivel Escolar": "pregrado",
+                    "NivelEscolar": "pregrado",
                     "Trabajo": true,
                     "Ingresos": 5000000,
-                    "Cultivos": [
-                        {
-                            "Nombre": "Papa"
-                        },
-                        {
-                            "Nombre": "Yuca"
-                        }
-                    ]
+                    "Cultivos": "Piña"
                 }
             ]
         },
@@ -65,7 +51,7 @@
                     "Cedula": "1005329",
                     "Nombre": "Danna",
                     "Edad": 23,
-                    "Nivel Escolar": "postgrado",
+                    "NivelEscolar": "postgrado",
                     "Trabajo": false,
                     "Ingresos": 4000000,
                     "Salidas Nocturnas": 7
@@ -74,7 +60,7 @@
                     "Cedula": "1005330",
                     "Nombre": "Maria",
                     "Edad": 24,
-                    "Nivel Escolar": "pregrado",
+                    "NivelEscolar": "pregrado",
                     "Trabajo": true,
                     "Ingresos": 3000000,
                     "Salidas Nocturnas": 8
@@ -85,33 +71,19 @@
                     "Cedula": "1005331",
                     "Nombre": "Lilian",
                     "Edad": 25,
-                    "Nivel Escolar": "postgrado",
+                    "NivelEscolar": "postgrado",
                     "Trabajo": false,
                     "Ingresos": 2000000,
-                    "Cultivos": [
-                        {
-                            "Nombre": "Papa"
-                        },
-                        {
-                            "Nombre": "Yuca"
-                        }
-                    ]
+                    "Cultivos": "Lechuga"
                 },
                 {
                     "Cedula": "1005332",
                     "Nombre": "Tafur",
                     "Edad": 26,
-                    "Nivel Escolar": "pregrado",
+                    "NivelEscolar": "pregrado",
                     "Trabajo": true,
                     "Ingresos": 1000000,
-                    "Cultivos": [
-                        {
-                            "Nombre": "Papa"
-                        },
-                        {
-                            "Nombre": "Yuca"
-                        }
-                    ]
+                    "Cultivos": "Sandia"
                 }
             ]
         }

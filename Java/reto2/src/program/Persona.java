@@ -12,16 +12,16 @@ import java.util.List;
  * @author ColdHeart
  */
 public class Persona {
-    long cedula;
+    String cedula;
     String nombrePersona;
-    int edad;
+    long edad;
     String NivelEscolar;
     boolean trabaja;
     long ingreso;
     List<Barrio> barrio;
     List<Vereda> vereda;
 
-    public Persona(long cedula, String nombrePersona, int edad, String NivelEscolar, boolean trabaja, long ingreso, List<Barrio> barrio, List<Vereda> vereda) {
+    public Persona(String cedula, String nombrePersona, long edad, String NivelEscolar, boolean trabaja, long ingreso, List<Barrio> barrio, List<Vereda> vereda) {
         this.cedula = cedula;
         this.nombrePersona = nombrePersona;
         this.edad = edad;
@@ -32,11 +32,11 @@ public class Persona {
         this.vereda = vereda;
     }
 
-    public long getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(long cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -48,11 +48,11 @@ public class Persona {
         this.nombrePersona = nombrePersona;
     }
 
-    public int getEdad() {
+    public long getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(long edad) {
         this.edad = edad;
     }
 
