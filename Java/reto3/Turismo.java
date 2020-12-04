@@ -1,23 +1,15 @@
 
-package testClaseLunes;
+package reto3;
 
 // la clase turismo es una subclase heredada de la clase Vehiculos
 public class Turismo extends Vehiculos
 {
     private int puertas;
     private boolean marchaAutomatica;
+
     // método constructor de la subclase Turismo
-    public Turismo(int puertas,
-                   boolean marchaAutomatica, 
-                   String matricula,
-                   String marca, 
-                   String modelo,
-                   String color, 
-                   double tarifa) 
-    {
-        // inicializar los atributos de la clase padre usando super
-        super(matricula, marca, modelo, color, tarifa);
-        // inicialización atributos clase hija
+    public Turismo(int puertas, boolean marchaAutomatica, String matricula, String marca, String modelo, String color, double tarifa, boolean disponible) {
+        super(matricula, marca, modelo, color, tarifa, disponible);
         this.puertas = puertas;
         this.marchaAutomatica = marchaAutomatica;
     }
@@ -41,7 +33,5 @@ public class Turismo extends Vehiculos
                 "Puertas: " + this.puertas + " ; " +
                 "Marcha: " + this.marchaAutomatica; //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    
+
 }

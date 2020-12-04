@@ -1,5 +1,5 @@
 
-package testClaseLunes;
+package reto3;
 
 // la clase Furgoneta es una subclase heredada de la clase Vehiculos
 public class Furgoneta extends Vehiculos
@@ -8,20 +8,12 @@ public class Furgoneta extends Vehiculos
     private int carga;
     private int volumen; 
     // método constructor de la subclase Furgoneta
-    public Furgoneta(int carga, 
-            int volumen, 
-            String matricula,
-            String marca, 
-            String modelo,
-            String color, 
-            double tarifa) 
-    {
-        // inicializar los atributos de la clase padre usando super
-        super(matricula, marca, modelo, color, tarifa);
-        // inicialización atributos clase hija
+     public Furgoneta(int carga, int volumen, String matricula, String marca, String modelo, String color, double tarifa, boolean disponible) {
+        super(matricula, marca, modelo, color, tarifa, disponible);
         this.carga = carga;
         this.volumen = volumen;
     }
+
     // método para visualizar desde la clase principal 
     // el atributo carga del objeto instanciado desde la subclase
     // Furgoneta

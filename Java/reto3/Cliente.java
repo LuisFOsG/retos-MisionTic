@@ -1,6 +1,5 @@
 
-package testClaseLunes;
-
+package reto3;
 
 public class Cliente 
 {
