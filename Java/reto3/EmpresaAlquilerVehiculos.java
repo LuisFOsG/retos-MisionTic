@@ -5,6 +5,8 @@ package reto3;
  * @author ColdHeart
  */
 public class EmpresaAlquilerVehiculos {
+    String saltoLinea = "             ";
+    
     String cif;
     String nombre;
     String paginaWeb;
@@ -107,23 +109,28 @@ public class EmpresaAlquilerVehiculos {
     }
 
     void imprimirCliente() {
-        System.out.println("RELACION DE CLIENTES"+"\nCliente #   NIF         Nombre");
+        System.out.println("***Clientes de la Empresa***"+"\nCliente"+this.saltoLinea+"#NIF "+this.saltoLinea+"Nombre");
          for (int i = 0; i < this.totalClientes; i++) {
-             System.out.println((i+1)+" "+this.cliente[i].getIden()+" "+ this.cliente[i].getNombre()+" "+this.cliente[i].getApellido());
+             System.out.println(
+                (i+1)+this.saltoLinea+this.cliente[i].getIden()+this.saltoLinea+this.cliente[i].getNombre()+" "+this.cliente[i].getApellido()
+             );
         }
     }
 
     void imprimirVehiculos() {
-        System.out.println("CATÁLOGO DE VEHICULOS"+"\nVeh. #   Matrícula         Modelo         Color           Tarifa          Disponible");
+        System.out.println("***Listado de Vehiculos***"+"\nVeh.       #Matrícula            Modelo           Color            Tarifa          Disponible");
          for (int i = 0; i < this.totalVehiculos; i++) {
-             System.out.println((i+1)+" "+this.vehiculos[i].getMatricula()+" "+this.vehiculos[i].getModelo()+" "+this.vehiculos[i].getColor()+" "+
-                     String.valueOf(this.vehiculos[i].getTarifa())+" "+this.vehiculos[i].isDisponible()
+             System.out.println(
+                     (i+1)+this.saltoLinea+this.vehiculos[i].getMatricula()+this.saltoLinea+
+                     this.vehiculos[i].getModelo()+this.saltoLinea+
+                     this.vehiculos[i].getColor()+this.saltoLinea+
+                     String.valueOf(this.vehiculos[i].getTarifa())+this.saltoLinea+
+                     this.vehiculos[i].isDisponible()
              );
         }
     }
 
     Object getCliente(String iden) {
-        
         while (encontrado==false && i<totalClientes) {            
             if(cliente[i].getIden().equals(iden)){
                 encontrado=true;

@@ -1,5 +1,9 @@
-
 package reto3;
+
+/**
+ *
+ * @author ColdHeart
+ */
 
 // la clase Deportivo es una subclase heredada de la clase Vehiculos
 public class Deportivo extends Vehiculos

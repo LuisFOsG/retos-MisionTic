@@ -1,6 +1,11 @@
 
 package reto3;
 
+/**
+ *
+ * @author ColdHeart
+ */
+
 public class VehiculoAlquilado 
 {
     //atributos de la clase VehiculoAlquilado

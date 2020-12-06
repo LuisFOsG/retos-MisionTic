@@ -1,5 +1,9 @@
-
 package reto3;
+
+/**
+ *
+ * @author ColdHeart
+ */
 
 // la clase Furgoneta es una subclase heredada de la clase Vehiculos
 public class Furgoneta extends Vehiculos

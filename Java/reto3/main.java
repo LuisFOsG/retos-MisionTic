@@ -1,36 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package reto3;
 
 /**
  *
  * @author ColdHeart
  */
+
 public class main {
     public static void main(String args[]){
-        Deportivo dep1 = new Deportivo(2000, "ABC123", "Camaro", "2021", "Negro", 1200, true);
-        Furgoneta fur1 = new Furgoneta(1400, 50, "BCD234", "Foton", "2020", "Blanco", 750, true);
-        Turismo tur1 = new Turismo(5, true, "CDE345", "Chevrolet", "2020", "Morado", 680, true);
+        EmpresaAlquilerVehiculos Empre = new EmpresaAlquilerVehiculos("987654321-1", "Mel KK QM", "www.melkkqm.com");
 
-        Cliente cli1 = new Cliente("10775827", "Jorge", "Quintero");
-        Cliente cli2 = new Cliente("50929006", "Martha", "Sáenz");
-        Cliente cli3 = new Cliente("1003432242", "Elías", "Tamayo");
+        Deportivo car1 = new Deportivo(8010, "ZXD525", "Chevrolet", "2019", "BLANCO", 800, true);
+        Furgoneta car2 = new Furgoneta(1219, 50, "OLK256", "Ferrari", "2020", "ROJO", 1500, true);
+        Turismo car3 = new Turismo(1217, true, "OLI528", "Nissan", "2018", "NEGRO", 850, true);
+        Turismo car4 = new Turismo(1080, false, "OLI588", "Nissan", "2017", "GRIS", 790, false);
         
-        EmpresaAlquilerVehiculos Cabi = new EmpresaAlquilerVehiculos("168345654-2", "JQ Rent", "www.jqrent.com");
+        Empre.registrarVehiculo(car1);
+        Empre.registrarVehiculo(car2);
+        Empre.registrarVehiculo(car3);
+        Empre.registrarVehiculo(car4);
+
+        Cliente cli1 = new Cliente("1053531455", "Luis", "Osorio");
+        Cliente cli2 = new Cliente("1097190615", "Melanny", "Nalu");
+        Cliente cli3 = new Cliente("4160917901", "Yulieth", "Garcia");
         
-        Cabi.registrarCliente(cli1);
-        Cabi.registrarCliente(cli2);
-        Cabi.registrarCliente(cli3);
-        Cabi.registrarVehiculo(dep1);
-        Cabi.registrarVehiculo(fur1);
-        Cabi.registrarVehiculo(tur1);
+        Empre.registrarCliente(cli1);
+        Empre.registrarCliente(cli2);
+        Empre.registrarCliente(cli3);
         
-        Cabi.imprimirCliente();
-        Cabi.imprimirVehiculos();
+        Empre.imprimirCliente();
+        System.out.println(" ");
+        Empre.imprimirVehiculos();
         
-        System.out.println("Cliente Existe:"+String.valueOf(Cabi.getCliente("50929006")));
+        String consultarCliente = "1053531455";
+        
+        System.out.println(" ");
+        if("-1".equals(String.valueOf(Empre.getCliente(consultarCliente)))){
+            System.out.println("El Cliente No Existe");
+        }else{
+            System.out.println("El Cliente Existe");
+        }
     }
 }
